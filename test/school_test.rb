@@ -56,8 +56,11 @@ class SchoolTest < Minitest::Test
   def test_standard_student_names
     # where is my instance to test against?  Is it school?
     # student_names = ['Aurora', 'tim', 'megan']
-      school = School.new('9:00', 7)
+    school = School.new('9:00', 7)
+    student_names = ['Aurora', 'tim', 'megan']
 
-    assert_equal ['Aurora', 'Tim', 'Megan'], student_names.standard_student_names
+
+
+    assert_equal ['Aurora', 'Tim', 'Megan'], school.student_names.standard_student_names
   end
 end

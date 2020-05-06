@@ -12,17 +12,17 @@ attr_reader :start_time, :hours_in_school_day, :student_names
   end
 
   def end_time
-    @start_time
+    e = @start_time.to_i + @hours_in_school_day
     #must find a way to seperate that first digit and leave the :00 alone.
-
-
+    "#{e}:00"
   end
-
+# require 'pry'; binding.pry
   def standard_student_names
     #accumulator?
-    # standard_student_names = []
+    standard_student_names = []
     @student_names.each do |n|
       standard_student_names << n.capitalize
+       # require 'pry'; binding.pry
     end
   end
 
