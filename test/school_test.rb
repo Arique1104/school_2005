@@ -53,14 +53,27 @@ class SchoolTest < Minitest::Test
     assert_equal '12:00', school2.end_time
   end
 
+  def test_it_can_determin_if_full_time
+    school1 = School.new('9:00', 7)
+    school2 = School.new('9:00', 3)
+
+    assert_equal true, school1.is_full_time?
+    assert_equal false, school2.is_full_time?
+  end
   def test_standard_student_names
     # where is my instance to test against?  Is it school?
     # student_names = ['Aurora', 'tim', 'megan']
+
     school = School.new('9:00', 7)
-    student_names = ['Aurora', 'tim', 'megan']
 
 
+    school.add_student_name('Aurora')
+    school.add_student_name('tim')
+    school.add_student_name('megan')
+    student_names = ['Aurora', 'Tim', 'Megan']
 
-    assert_equal ['Aurora', 'Tim', 'Megan'], school.student_names.standard_student_names
+# require "pry"; binding.pry
+
+    assert_equal student_names, school.standard_student_names
   end
 end

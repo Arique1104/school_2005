@@ -1,5 +1,7 @@
 class School
-attr_reader :start_time, :hours_in_school_day, :student_names
+attr_reader :start_time,
+            :hours_in_school_day,
+            :student_names
 
   def initialize(start_time, hours_in_school_day)
     @start_time = start_time
@@ -17,6 +19,16 @@ attr_reader :start_time, :hours_in_school_day, :student_names
     "#{e}:00"
   end
 # require 'pry'; binding.pry
+
+  def is_full_time?
+    @hours_in_school_day > 4
+    # if @hours_in_school_day > 4
+    #   true
+    # else
+    #   false
+    # end
+  end
+
   def standard_student_names
     #accumulator?
     standard_student_names = []
@@ -24,6 +36,7 @@ attr_reader :start_time, :hours_in_school_day, :student_names
       standard_student_names << n.capitalize
        # require 'pry'; binding.pry
     end
+    standard_student_names
   end
 
 end
